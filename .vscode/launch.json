@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/minay/Desktop/linkedList/LinkedList",
-      "program": "c:/Users/minay/Desktop/linkedList/LinkedList/build/Debug/outDebug",
+      "cwd": "c:/Users/minay/Desktop/LinkedList",
+      "program": "c:/Users/minay/Desktop/LinkedList/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

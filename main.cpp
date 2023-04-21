@@ -21,6 +21,15 @@ int main() {
     listAnimal.push_back(a4);
     listAnimal.push_back(a5);
     
+    //afficher element avec un ietrateur
+    for (auto it = listAnimal.begin();it!=listAnimal.end();++it){
+        cout<<(*it)->getNom()<<endl;
+    }
+
+    cout<<endl;
+    cout<<endl;
+
+    
     //pour effacer un element de la liste a la position x = n-1, dans notre cas on veut la premiere position donc l index 0
     auto element = next(listAnimal.begin(),0);
     //on efface le pointeur pour liberer l espace et ensuite on efface de la liste
@@ -28,12 +37,11 @@ int main() {
     listAnimal.erase(element);
     
 
-
+    //afficher element avec un ietrateur
     for (auto it = listAnimal.begin();it!=listAnimal.end();++it){
         cout<<(*it)->getNom()<<endl;
     }
 
-    
 
 
     //on libere l espace
