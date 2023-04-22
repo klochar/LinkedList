@@ -12,3 +12,10 @@ string Animal::getNom()const{
 int Animal::getNbYeux()const{
     return this->nbYeux;
 }
+
+bool Animal::operator==(const Animal& a){
+    if(this->nom == a.nom){
+        return true;
+    }
+    return false;
+}

@@ -2,6 +2,8 @@
 #include <fstream>
 #include <list>
 #include "Animal.hpp"
+#include <string>
+#include <algorithm>
 
 using namespace std;
 #define s endl;
@@ -36,16 +38,38 @@ int main() {
     iter++;//rendu au deuxieme
     listAnimal.insert(iter,a7);//il va le mettre avant ce que iter pointe donc il va le mettre avant a2 
 
+    //find_if, marche mieux avec les pointeurs et lambda pour les criteres
+    string nom = "TEST";
 
-    // cout<<endl;
-    // cout<<endl;
+    auto animalTrouveFind_If = find_if(listAnimal.begin(), listAnimal.end(),[&](Animal* animal){return animal->getNom() == nom;});
+    if (animalTrouveFind_If != listAnimal.end()){//pointeur null donc il n a pas trouve
+        cout<<"trouve find_if"<< " " <<(*animalTrouveFind_If)->getNom()<<endl;
+    } else {
+        cout<<"Animal non trouve";
+    }
+
+
+    cout<<endl;
+    cout<<endl;
+    //find, ne marche pas vrm avec les pointeur de type
+    //Animal* animalATrouver = new Animal(4,"chat",2);
+    auto animalTrouveFind = find(listAnimal.begin(),listAnimal.end(),a2);
+    if(animalTrouveFind!= listAnimal.end()){
+        cout<<"trouve find";
+    } else {
+        cout<<"non trouve find";
+    }
+
+
+    cout<<endl;
+    cout<<endl;
 
     
     // //pour effacer un element de la liste a la position x = n-1, dans notre cas on veut la premiere position donc l index 0
-    // auto element = next(listAnimal.begin(),0);
-    // //on efface le pointeur pour liberer l espace et ensuite on efface de la liste
-    // delete *element;//-->dereference nous amenera au pointeur de l animal 
-    // listAnimal.erase(element);
+    auto element = next(listAnimal.begin(),0);
+    //on efface le pointeur pour liberer l espace et ensuite on efface de la liste
+    delete *element;//-->dereference nous amenera au pointeur de l animal 
+    listAnimal.erase(element);
     
 
     //afficher element avec un ietrateur

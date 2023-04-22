@@ -15,6 +15,8 @@ public:
     int getNbPatte()const;
     string getNom()const;
     int getNbYeux()const;
+
+    bool operator==(const Animal& a);
     
 
 protected:
