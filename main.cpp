@@ -29,12 +29,23 @@ int main() {
     cout<<endl;
     cout<<endl;
 
+    Animal* a7 = new Animal(4,"TEST",2);
+
+    list<Animal*>::iterator iterDernier = listAnimal.end();//pointe vers un pointeur null 
+    list<Animal*>::iterator iter = listAnimal.begin();//pointe vers le premier
+    iter++;//rendu au deuxieme
+    listAnimal.insert(iter,a7);//il va le mettre avant ce que iter pointe donc il va le mettre avant a2 
+
+
+    // cout<<endl;
+    // cout<<endl;
+
     
-    //pour effacer un element de la liste a la position x = n-1, dans notre cas on veut la premiere position donc l index 0
-    auto element = next(listAnimal.begin(),0);
-    //on efface le pointeur pour liberer l espace et ensuite on efface de la liste
-    delete *element;//-->dereference nous amenera au pointeur de l animal 
-    listAnimal.erase(element);
+    // //pour effacer un element de la liste a la position x = n-1, dans notre cas on veut la premiere position donc l index 0
+    // auto element = next(listAnimal.begin(),0);
+    // //on efface le pointeur pour liberer l espace et ensuite on efface de la liste
+    // delete *element;//-->dereference nous amenera au pointeur de l animal 
+    // listAnimal.erase(element);
     
 
     //afficher element avec un ietrateur
